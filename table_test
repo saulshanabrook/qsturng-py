@@ -1,0 +1,19 @@
+from qsturng import qsturng,p_keys,v_keys
+from make_tbls import T,R
+from collections import Counter
+
+def sig_digit_match(x,y):
+    count = 0
+    for i in range(8):
+        if round(x, i) == round(y, i):
+            count += 1
+
+    return 0
+        
+
+    
+
+for p in T:
+    for v in T[p]:
+        for r in R.keys():
+            pass
