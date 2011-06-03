@@ -29,20 +29,20 @@ import numpy as np
 
 from scipy.optimize import fminbound
 
-inf = float('inf')
+inf = np.inf
 
-__version__ = '0.2.2'
+__version__ = '0.2.3'
 
 # changelog
 # 0.1   - initial release
 # 0.1.1 - vectorized
 # 0.2   - psturng added
 # 0.2.1 - T, R generation script relegated to make_tbls.py
-# 0.2.2 - qsturng0 first order approximation for initial part of scalar
-#         optimization
+# 0.2.2 
 #       - select_points refactored for performance to select_ps and
 #         select_vs
 #       - pysturng tester added.
+# 0.2.3 - uses np.inf and np.isinf
 
 # Gleason's table was derived using least square estimation on the tabled
 # r values for combinations of p and v. In total there are 206
@@ -474,9 +474,9 @@ def _func(a, p, r, v):
         f += -0.002 / (1. + 12. * _phi(p)**2)
 
         if v <= 4.364:
-            f += 1./517. - 1./(312.*(v,1e38)[v==inf])
+            f += 1./517. - 1./(312.*(v,1e38)[np.isinf(v)])
         else:
-            f += 1./(191.*(v,1e38)[v==inf])
+            f += 1./(191.*(v,1e38)[np.isinf(v)])
 
     return -f
 

@@ -65,8 +65,8 @@ for (v in c(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,
 
 for (v in c(2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,
            17,18,19,20,24,30,40,60,120,1e38)) {
-    m = qtukey(0.800, rs, v)
-    fname = sprintf('CH_p800.dat',r,v)
+    m = qtukey(0.975, rs, v)
+    fname = sprintf('CH_p975.dat')
     print(fname)
     write(rbind(m),
           file=fname,

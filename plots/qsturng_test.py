@@ -7,8 +7,8 @@ gross visual verification of the algorithm"""
 import numpy as np
 ##from qsturng import qsturng,p_keys,v_keys
 from qsturng import p_keys,v_keys
-from qsturng import _qsturng as qsturng
-from make_tbls import T,R
+from qsturng import qsturng
+from qsturng.make_tbls import T,R
 import pylab
 
 inf = float('inf')
@@ -81,6 +81,6 @@ for i, v in enumerate(vs):
         pylab.text(.55, 5.5, '$r \, = \, 100$')
         pylab.title(r'$v = \infty$')
             
-pylab.savefig('qsturng0,dpi=100.png', dpi=100)
-pylab.savefig('qsturng0,dpi=300.png', dpi=300)
+pylab.savefig('qsturng,dpi=100.png', dpi=100)
+pylab.savefig('qsturng,dpi=300.png', dpi=300)
 pylab.close()
